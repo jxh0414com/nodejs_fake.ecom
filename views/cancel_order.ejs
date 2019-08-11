@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="/public/css/cancel_order.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Order Cancel Request</title>
+  </head>
+  <body>
+    <%- include layout/navbar %>
+    <div class="cancel">
+      <img
+        class="other_banner"
+        src="/public/images/others_banner.jpg"
+        alt="banner_img"
+      />
+      <div>
+        <div class="cancel_info">
+          <h2>Order Cancel Request</h2>
+          <form
+            class="cancel_form"
+            method="POST"
+            action="/users/order/cancel_order/:id"
+          >
+            <% if(messages && messages.length > 0) { %> <%
+            messages.forEach(message => { %>
+            <span><%= message %></span>
+            <% })} %> <% if (order) { %> <input type="hidden" name="orderId"
+            value=<%=order._id %> /> <% } %>
+
+            <label for="status"> Status: </label>
+            <select type="text" name="status">
+              <option value="Requesting Cancellation" selected
+                >Cancellation</option
+              >
+            </select>
+
+            <label for="reason"> Reason: </label>
+            <textarea type="text" name="reason"></textarea>
+
+            <button class="cancel_button" type="submit" value="Submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include layout/footer %>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.single_product {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  width: 100%;
+  border-bottom: 1px gray solid;
+  border-top: 1px gray solid;
+  padding: 3% 0;
+}
+
+.single_product_image {
+  display: inline-block;
+}
+
+.single_product_detail {
+  display: inline-block;
+  width: 20%;
+  margin: 1% 0 0 5%;
+}
+
+.single_product_detail p {
+  font-size: 1.4rem;
+}
+
+.single_product_detail div {
+  margin-bottom: 12.5%;
+}

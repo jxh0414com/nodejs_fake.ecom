@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Compiled and minified CSS -->
+    <link href="/public/css/products.css" rel="stylesheet" type="text/css" />
+    <title>Products</title>
+  </head>
+  <body>
+    <%- include layout/navbar %>
+    <div class="products">
+      <img
+        class="other_banner"
+        src="/public/images/others_banner.jpg"
+        alt="banner_img"
+      />
+      <div>
+        <div class="sub_category">
+          <ul>
+            <li class="category_header">Product List</li>
+            <li class="category_item"><div id="all">All</div></li>
+            <li class="category_item"><div id="raw">Raw</div></li>
+            <li class="category_item"><div id="snacks">Snacks</div></li>
+            <li class="category_item"><div id="chips">Chips</div></li>
+            <li class="category_item"><div id="meat">Meat</div></li>
+            <li class="category_item"><div id="drinks">Drinks</div></li>
+            <li class="category_item"><div id="organic">Organic</div></li>
+            <li class="category_item"><div id="seafood">Seafood</div></li>
+            <li class="category_item"><div id="spices">Spices</div></li>
+            <li class="category_item"><div id="dairy">Dairy</div></li>
+            <li class="category_item"><div id="fruit">Fruits</div></li>
+            <li class="category_item"><div id="frozen">Frozen</div></li>
+            <li class="category_item"><div id="wheat">Wheat</div></li>
+            <li class="category_item"><div id="sweets">Sweets</div></li>
+            <li class="category_header"></li>
+          </ul>
+        </div>
+        <div class="products_info">
+          <h2>Products</h2>
+
+          <div class="products_list">
+            <% products.forEach(product => { %>
+
+            <div class="products_detail" id="<%=product.category%>">
+              <img class="products_images" src="<%= product.imageURL %>"
+              alt="productImage" />
+              <a id="product_name" href=<%="/products/"+product._id %>><%= product.name %></a>
+
+          </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include layout/footer %>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+    <script>
+      $(document).ready(() => {
+        $('.category_item').on('click', (e) => {
+          var category = e.target.id
+          if(category == "all") {
+            $('.products_detail').addClass('hide')
+            setTimeout(() => {
+              $('.products_detail').removeClass('hide')
+            }, 1000)
+          }  else {
+            $('.products_detail').addClass('hide')
+            setTimeout(() => {
+              $('#' + category).removeClass('hide')
+            }, 1000)
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="/public/css/add_product.css" rel="stylesheet" type="text/css" />
+    <title>Add Product</title>
+  </head>
+  <body>
+    <%- include layout/navbar %>
+    <div class="add_product">
+      <img
+        class="other_banner"
+        src="/public/images/others_banner.jpg"
+        alt="banner_img"
+      />
+      <div>
+        <div class="add_product_info">
+          <h2>Add Product</h2>
+          <form
+            class="add_product_form"
+            method="POST"
+            action="/products/create"
+            enctype="multipart/form-data"
+          >
+            <% if(messages && messages.length > 0) { %> <%
+            messages.forEach(message => { %>
+            <span><%= message %></span>
+            <% })} %>
+            <br />
+            <label for="image"> Image: </label>
+            <input class="add_product_input" type="file" name="image" />
+
+            <label for="name"> Product name: </label>
+            <input class="add_product_input" type="text" name="name" />
+
+            <label for="description"> Description: </label>
+            <input class="add_product_input" type="text" name="description" />
+
+            <label for="price"> Price: </label>
+            <input class="add_product_input" type="text" name="price" />
+
+            <label for="category"> Category: </label>
+            <br /><br />
+
+            <div>
+              <input type="checkbox" name="category[]" value="raw" />
+              <label for="raw">Raw</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="snack" />
+              <label for="snack">Snacks</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="chip" />
+              <label for="chip">Chips</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="meat" />
+              <label for="meat">Meats</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="drink" />
+              <label for="drink">Drinks</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="organic" />
+              <label for="organic">Organic</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="seafood" />
+              <label for="seafood">Seafood</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="spice" />
+              <label for="spice">Spices</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="dairy" />
+              <label for="dairy">Dairy</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="fruit" />
+              <label for="fruit">Fruits</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="frozen" />
+              <label for="frozen">Frozen</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="wheat" />
+              <label for="wheat">Wheat</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="category[]" value="sweet" />
+              <label for="sweet">Sweets</label>
+            </div>
+            <button class="add_product_button" type="submit" value="Submit">
+              Add
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include layout/footer %>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Compiled and minified CSS -->
+    <link href="/public/css/admin.css" rel="stylesheet" type="text/css" />
+    <title>All Order</title>
+  </head>
+  <body>
+    <%- include layout/navbar %>
+    <div class="admin">
+      <img
+        class="other_banner"
+        src="/public/images/others_banner.jpg"
+        alt="banner_img"
+      />
+      <% if (orders && orders.length > 0) { %>
+      <div class="admin_info">
+        <h2>All Orders</h2>
+        <% orders.filter(x => x.status != "Completed" && x.status != "Refunded" && x.status != "Cancelled").forEach(order => { %>
+        <a href=<%="/users/admin/status_change/"+ order._id %>>Change&nbsp;Status</a>
+        <p><span>Status:</span> <%= order.status %></p>
+
+        <div class="admin_list">
+          <% order.items.forEach(item => { %>
+          <div class="admin_detail">
+            <p>Brought: <%= item.qty %></p>
+            <p><%= item.item.name %></p>
+            <p><%= item.item.price %>/item</p>
+          </div>
+          <% }) %>
+
+          <p style="float: left"><%= order.order_date %></p>
+          <p style="float: right">Total/Order: <%= order.cart.totalPrice %></p>
+        </div>
+        <% })} %>
+      </div>
+    </div>
+    <%- include layout/footer %>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.index_about_contact {
+  position: relative;
+  width: 100%;
+}
+
+.index_about {
+  width: 35%;
+  float: left;
+  margin-left: 17%;
+}
+
+.index_about_pic {
+  width: 95%;
+  height: 12rem;
+}
+
+.index_about p {
+  width: 95%;
+  margin-top: 1.6rem;
+  line-height: 2rem;
+}
+
+.index_about p a {
+  text-decoration: none;
+  color: white;
+  margin: 0 2rem;
+  padding: 0.5rem;
+  background: lightgrey;
+}
+
+.index_contact {
+  float: right;
+  width: 40%;
+  margin: 0 7% 5rem 0;
+}
+
+.index_contact_pic {
+  width: 78%;
+  height: 30rem;
+}

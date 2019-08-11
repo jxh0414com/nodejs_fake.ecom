@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="/public/css/login.css" rel="stylesheet" type="text/css" />
+    <title>User Login</title>
+  </head>
+  <body>
+    <%- include layout/navbar %>
+    <div class="login">
+      <img
+        class="other_banner"
+        src="/public/images/others_banner.jpg"
+        alt="banner_img"
+      />
+      <div>
+        <div class="login_info">
+          <h2>Login</h2>
+          <form class="login_form" method="POST" action="/users/login">
+            <% if(messages && messages.length > 0) { %> <%
+            messages.forEach(message => { %>
+            <span><%= message %></span>
+            <% })} %>
+            <br />
+            <label for="email"> Email: </label>
+            <input type="text" name="email" />
+
+            <label for="password"> Password: </label>
+            <input type="password" name="password" />
+            <a style="float: right" href="/users/register"
+              >Don't have an account?</a
+            >
+            <a href="/users/forgot_password">Forgot Password?</a>
+
+            <button class="login_button" type="submit" value="Submit">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include layout/footer %>
+  </body>
+</html>

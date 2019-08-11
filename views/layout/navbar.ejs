@@ -1,0 +1,46 @@
+<link href="/public/css/navbar.css" rel="stylesheet" type="text/css" />
+
+<img
+  class="logo logo_first"
+  src="/public/images/Logo_green_left.png"
+  alt="logo_green"
+/>
+<img class="logo" src="/public/images/Logo.png" alt="logo" />
+<img class="logo" src="/public/images/Logo_red_right.png" alt="logo_red" />
+<nav class="navbar">
+  <ul>
+    <li><a href="/"> Home </a></li>
+    <li><a href="/products"> Product </a></li>
+    <li><a href="/about"> About </a></li>
+    <li><a href="/contact"> Contact </a></li>
+    <li><a href="/feedback"> Feedback </a></li>
+    <% if (session.cart) { %>
+    <li>
+      <a href="/carts/shopping-cart">
+        <i class="fas fa-shopping-cart"></i>&nbsp;(<%= session.cart.totalQty %>)
+      </a>
+    </li>
+    <% } else { %>
+    <li>
+      <a href="/carts/shopping-cart">
+        Shopping&nbsp;Cart&nbsp;(0)
+      </a>
+    </li>
+    <% } %> <% if (user) { %>
+    <li class="dropdown">
+      <a href="#"> User&nbsp;Management</a>
+      <ul>
+        <li><a href="/products/create"> Add&nbsp;Product </a></li>
+        <li><a href="/users/profile"> User&nbsp;Profile</a></li>
+        <li><a href="/users/order"> Orders</a></li>
+        <li><a href="/users/admin"> Admin </a></li>
+        <li><a href="/users/logout"> Logout </a></li>
+      </ul>
+    </li>
+    <% } else { %>
+    <li><a href="/users/login"> Login </a></li>
+    <li><a href="/users/register"> Register </a></li>
+
+    <% } %>
+  </ul>
+</nav>

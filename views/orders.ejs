@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Compiled and minified CSS -->
+    <link href="/public/css/orders.css" rel="stylesheet" type="text/css" />
+    <title>User's Order</title>
+  </head>
+  <body>
+    <%- include layout/navbar %>
+    <div class="orders">
+      <img
+        class="other_banner"
+        src="/public/images/others_banner.jpg"
+        alt="banner_img"
+      />
+      <% if (orders && orders.length > 0) { %>
+      <div class="orders_info">
+        <h2>My Orders</h2>
+        <% orders.forEach(order => { %>
+        <% if (order.status != "Completed" && order.status != "Refunded" && order.status != "Cancelled") { %>
+          <a href=<%="/users/order/cancel_order/"+order._id %>>Cancel&nbsp;Request</a>
+          <% } %>
+        <p><span>Status:</span> <%= order.status %></p>
+
+        <div class="orders_list">
+          <% order.items.forEach(item => { %>
+          <div class="orders_detail">
+            <p>Brought: <%= item.qty %></p>
+            <p><%= item.item.name %></p>
+            <p><%= item.item.price %>/item</p>
+          </div>
+          <% }) %>
+
+          <p style="float: left"><%= order.order_date %></p>
+          <p style="float: right">Total/Order: <%= order.cart.totalPrice %></p>
+        </div>
+        <% })} %>
+      </div>
+    </div>
+    <%- include layout/footer %>
+  </body>
+</html>

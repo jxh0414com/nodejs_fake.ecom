@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.admin {
+  width: 100%;
+  min-height: 70rem;
+}
+
+.other_banner {
+  width: 100%;
+  height: 20rem;
+  border-bottom: 1px solid gray;
+}
+
+.admin_info {
+  float: left;
+  margin: 5% 0 0 25%;
+  width: 45%;
+}
+
+.admin_info h2 {
+  padding-bottom: 1rem;
+  border-bottom: 0.5px dotted gray;
+  margin-bottom: 3%;
+}
+
+.admin_list {
+  border: 1px solid gray;
+  border-radius: 0.3rem;
+  margin-bottom: 3%;
+}
+
+.admin_detail {
+  width: 100%;
+  padding: 1.5% 0;
+}
+
+.admin_detail p {
+  display: inline-block;
+  margin: 0 10%;
+}
+
+.admin_info p span {
+  color: lightgreen;
+}
+
+.admin_info a {
+  text-decoration: none;
+  color: lightblue;
+  float: right;
+}

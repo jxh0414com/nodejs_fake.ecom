@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.cancel {
+  width: 100%;
+  min-height: 70rem;
+}
+
+.other_banner {
+  width: 100%;
+  height: 20rem;
+  border-bottom: 1px solid gray;
+}
+
+.cancel_info {
+  float: left;
+  margin: 5% 0 0 30%;
+  width: 35%;
+}
+
+.cancel_info h2 {
+  padding-bottom: 1rem;
+  border-bottom: 0.5px dotted gray;
+}
+
+.cancel_form {
+  margin-top: 5%;
+}
+
+.cancel_form label {
+  font-size: 1.3rem;
+  color: gray;
+}
+
+.cancel_form input {
+  display: flex;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 2rem;
+  border-radius: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.cancel_form select {
+  display: flex;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 2rem;
+  border-radius: 0.2rem;
+  margin-bottom: 2rem;
+  color: red;
+}
+
+.cancel_form textarea {
+  display: flex;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 7rem;
+  border-radius: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.cancel_button {
+  display: flex;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  background: gray;
+  color: white;
+  margin: 3rem 0;
+}
+.cancel_form span {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: red;
+  color: white;
+  padding: 0.8rem 0;
+  font-size: 1.2rem;
+  margin-bottom: 1%;
+  border-radius: 0.5rem;
+}

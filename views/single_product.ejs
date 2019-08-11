@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Compiled and minified CSS -->
+    <link
+      href="/public/css/single_product.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Single_Product</title>
+  </head>
+  <body>
+    <% if (product) { %>
+    <div class="single_product">
+      <div class="single_product_image">
+        <img src=<%= product.imageURL %> />
+      </div>
+
+      <div class="single_product_detail">
+        <div>
+          <h1><%= product.name %></h1>
+        </div>
+
+        <div>
+          <h4>Description:</h4>
+          <p><%= product.description %></p>
+        </div>
+
+        <div>
+          <h4>Price:</h4>
+          <p><%= product.price %></p>
+        </div>
+        <a href=<%="/carts/add-to-cart/"+product._id %>> Add to Cart
+      </div>
+    </div>
+    <% } %>
+  </body>
+</html>

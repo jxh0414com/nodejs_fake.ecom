@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="/public/css/edit_profile.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Edit User Profile</title>
+  </head>
+  <body>
+    <%- include layout/navbar %>
+    <div class="edit">
+      <img
+        class="other_banner"
+        src="/public/images/others_banner.jpg"
+        alt="banner_img"
+      />
+      <div>
+        <div class="edit_info">
+          <h2>Edit Profile</h2>
+          <form
+            class="edit_form"
+            method="POST"
+            action="/users/profile/edit_profile"
+          >
+            <% if(messages && messages.length > 0) { %> <%
+            messages.forEach(message => { %>
+            <span><%= message %></span>
+            <% })} %>
+            <br />
+            <% if (userExist) { %>
+            <label for="first_name"> First name: </label>
+            <input type="text" name="first_name" value=<%= userExist.first_name
+            %>>
+
+            <label for="Last_name"> Last name: </label>
+            <input type="text" name="last_name" value=<%= userExist.last_name %>
+            >
+
+            <label for="email"> Email: </label>
+            <input type="text" name="email" value=<%= userExist.email %> >
+
+            <label for="phone"> Phone: </label>
+            <input type="text" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            value=<%= userExist.phone %> > <% } %>
+            <button class="edit_button" type="submit" value="Submit">
+              Edit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include layout/footer %>
+  </body>
+</html>

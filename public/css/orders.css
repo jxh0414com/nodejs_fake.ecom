@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.orders {
+  width: 100%;
+  min-height: 70rem;
+}
+
+.other_banner {
+  width: 100%;
+  height: 20rem;
+  border-bottom: 1px solid gray;
+}
+
+.orders_info {
+  float: left;
+  margin: 5% 0 0 25%;
+  width: 45%;
+}
+
+.orders_info h2 {
+  padding-bottom: 1rem;
+  border-bottom: 0.5px dotted gray;
+  margin-bottom: 3%;
+}
+
+.orders_list {
+  border: 1px solid gray;
+  border-radius: 0.3rem;
+  margin-bottom: 3%;
+}
+
+.orders_detail {
+  width: 100%;
+  padding: 1.5% 0;
+}
+
+.orders_detail p {
+  display: inline-block;
+  margin: 0 10%;
+}
+
+.orders_info p span {
+  color: lightgreen;
+}
+
+.orders_info a {
+  text-decoration: none;
+  color: red;
+  float: right;
+}

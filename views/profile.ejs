@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Compiled and minified CSS -->
+    <link href="/public/css/profile.css" rel="stylesheet" type="text/css" />
+    <title>User Profile</title>
+  </head>
+  <body>
+    <%- include layout/navbar %>
+    <div class="profile">
+      <img
+        class="other_banner"
+        src="/public/images/others_banner.jpg"
+        alt="banner_img"
+      />
+      <div class="profile_info">
+        <h2>User Profile</h2>
+        <% if (userExist) { %>
+        <div class="profile_detail">
+          <p>First Name: <%= userExist.first_name %></p>
+          <p>Last Name: <%= userExist.last_name %></p>
+          <p>Email: <%= userExist.email %></p>
+          <p>Phone: <%= userExist.phone %></p>
+          <div class="profile_button">
+            <a href="/users/profile/edit_profile"> Edit Information</a>
+            <a href="/users/profile/change_password">Change Password</a>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+    <%- include layout/footer %>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="/public/css/register.css" rel="stylesheet" type="text/css" />
+    <title>Add User</title>
+  </head>
+  <body>
+    <%- include layout/navbar %>
+    <div class="register">
+      <img
+        class="other_banner"
+        src="/public/images/others_banner.jpg"
+        alt="banner_img"
+      />
+      <div>
+        <div class="register_info">
+          <h2>Add User</h2>
+          <form class="register_form" method="POST" action="/users/register">
+            <% if(messages && messages.length > 0) { %> <%
+            messages.forEach(message => { %>
+            <span><%= message %></span>
+            <% })} %>
+            <br />
+            <label for="first_name"> First name: </label>
+            <input type="text" name="first_name" />
+
+            <label for="Last_name"> Last name: </label>
+            <input type="text" name="last_name" />
+
+            <label for="email"> Email: </label>
+            <input type="text" name="email" />
+
+            <label for="phone"> Phone: </label>
+            <input
+              type="text"
+              name="phone"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              placeholder="123-456-7890"
+            />
+
+            <label for="password"> Password: </label>
+            <input type="password" name="password" />
+
+            <label for="passwordConfirm"> Confirm Password: </label>
+            <input type="password" name="passwordConfirm" />
+            <a href="/users/login">Already has an account?</a>
+
+            <button class="register_button" type="submit" value="Submit">
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include layout/footer %>
+  </body>
+</html>

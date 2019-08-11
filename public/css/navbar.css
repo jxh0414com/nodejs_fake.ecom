@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  background: #adadad;
+  height: 3rem;
+}
+
+.navbar ul li {
+  display: inline-block;
+  list-style: none;
+  position: relative;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  animation: changeLinkColor infinite 3s;
+}
+
+nav ul li a {
+  display: block;
+  color: red;
+  padding: 1rem 3rem;
+}
+
+nav ul li ul {
+  width: 100%;
+  display: none;
+  position: absolute;
+  z-index: 2;
+  background: gray;
+  margin-top: -1%;
+}
+
+.dropdown:hover ul {
+  display: block;
+}
+
+nav ul li ul li {
+  width: 100%;
+  border-top: 1px white solid;
+}
+
+nav ul li ul li a {
+  padding: 2rem 1rem !important;
+}
+
+@keyframes changeLinkColor {
+  0% {
+    color: lime;
+  }
+  50% {
+    color: aqua;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.logo {
+  width: 10%;
+  height: 9rem;
+}
+
+.logo_first {
+  margin-left: 15%;
+}
